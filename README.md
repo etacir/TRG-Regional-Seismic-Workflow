@@ -8,4 +8,4 @@ The coupled DRM-PML system is a powerful computational tool for soil-structure i
 
 [Zhang, W., Seylabi, E. E., & Taciroglu, E. (2019). An ABAQUS toolbox for soil-structure interaction analysis. Computers and Geotechnics, 114, 103143.](https://www.sciencedirect.com/science/article/pii/S0266352X19302071)
 
-[Zhang, W., & Taciroglu, E. (2021). A novel Rayleigh-type viscoelastic Perfectly-Matched-Layer for wave propagation analysis: Formulation, implementation and application. Computer Methods in Applied Mechanics and Engineering, 383, 113913.](https://www.sciencedirect.com/science/article/pii/S0045782521002504)
+[2][Zhang, W., & Taciroglu, E. (2021). A novel Rayleigh-type viscoelastic Perfectly-Matched-Layer for wave propagation analysis: Formulation, implementation and application. Computer Methods in Applied Mechanics and Engineering, 383, 113913.](https://www.sciencedirect.com/science/article/pii/S0045782521002504)
