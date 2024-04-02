@@ -1,6 +1,7 @@
 ! Modify material properties
 ! Modify cp_ref for PML      
       
+
 !
 !    ABAQUS format UEL subroutine
 !
@@ -321,20 +322,20 @@
             x3 = x3 + N(i)*coords(3,i)
           end do
           
-          IF(x3 > -200.d0) THEN
-              Vs = 400.d0
-              Damp_beta = 0.0106d0
-          ELSE
-              Vs = 800.d0
-              Damp_beta = 0.004244d0
-          ENDIF
+!          IF(x3 > -200.d0) THEN
+!              Vs = 400.d0
+!              Damp_beta = 0.0106d0
+!          ELSE
+!              Vs = 800.d0
+!              Damp_beta = 0.004244d0
+!          ENDIF
                     
                     
           
-          mu = rho*Vs**2.d0
-          E = mu*2.d0*(1.d0+xnu)
-          lambda = xnu*E/((1.d0+xnu)*(1.d0-2.D0*xnu))            
-          PROPS(1) = E
+!          mu = rho*Vs**2.d0
+!          E = mu*2.d0*(1.d0+xnu)
+!          lambda = xnu*E/((1.d0+xnu)*(1.d0-2.D0*xnu))            
+!          PROPS(1) = E
 
           call PML_alpha_beta_function(PROPS,x1,x2,x3,PML_alpha_beta)
 
@@ -1855,9 +1856,9 @@
 
       end select
 
-      PML_b = PML_L / 1.d0   !characteristic length (average element size in the PML domain) 
+      PML_b = PML_L * 2.d0   !characteristic length (average element size in the PML domain) 
       
-      cp_ref = 1600.d0
+!      cp_ref = 1600.d0
 
       alpha_0 = ((afp+1)*PML_b) / (2.d0*PML_L )*LOG10(1.d0 / PML_Rcoef)
       beta_0 = ((afp+1)*cp_ref) / (2.d0*PML_L )*LOG10(1.d0 / PML_Rcoef)
