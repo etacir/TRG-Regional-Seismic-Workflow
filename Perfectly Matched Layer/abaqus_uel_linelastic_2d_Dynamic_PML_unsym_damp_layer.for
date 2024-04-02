@@ -292,24 +292,24 @@
             x2 = x2 + N(i)*coords(2,i)
           end do
           
-          IF(x2 > -1000.d0) THEN
-              Vs = 1500.d0
-              rho = 2050.d0
-              xnu = 0.35d0
-          ELSE
-              Vs = 2500.d0
-              rho = 2230.d0
-              xnu = 0.3d0
-          ENDIF
+ !         IF(x2 > -1000.d0) THEN
+ !             Vs = 1500.d0
+ !             rho = 2050.d0
+ !             xnu = 0.35d0
+ !         ELSE
+ !             Vs = 2500.d0
+ !             rho = 2230.d0
+ !             xnu = 0.3d0
+ !         ENDIF
 
           
           
-          mu = rho*Vs**2.d0
-          E = mu*2.d0*(1.d0+xnu)
-          lambda = xnu*E/((1.d0+xnu)*(1.d0-2.D0*xnu))            
-          PROPS(1) = E
-          PROPS(2) = xnu
-          PROPS(3) = rho
+ !         mu = rho*Vs**2.d0
+ !         E = mu*2.d0*(1.d0+xnu)
+ !         lambda = xnu*E/((1.d0+xnu)*(1.d0-2.D0*xnu))            
+ !         PROPS(1) = E
+ !         PROPS(2) = xnu
+ !         PROPS(3) = rho
           
           
           call PML_alpha_beta_function(PROPS,x1,x2,PML_alpha_beta)
@@ -1147,13 +1147,13 @@
 
       end select
 
-      PML_b = PML_L   !characteristic length (average element size in the PML domain) 
+      PML_b = PML_L*2.d0   !characteristic length (average element size in the PML domain) 
 
       alpha_0 = ((afp+1)*PML_b) / (2.d0*PML_L )*LOG10(1.d0 / PML_Rcoef)
       beta_0 = ((afp+1)*cp_ref) / (2.d0*PML_L )*LOG10(1.d0 / PML_Rcoef)
       
 !      alpha_0 = 12.d0
-      beta_0 = 2806.26d0
+!      beta_0 = 2806.26d0
       
       PML_alpha_beta(1,1) = 1.d0 + alpha_0*((x1 -x1_0) * n1 /PML_L)**afp
       PML_alpha_beta(1,2) = 1.d0 + alpha_0*((x2 -x2_0) * n2 /PML_L)**afp
